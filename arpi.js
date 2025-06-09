@@ -62,14 +62,19 @@ function showError(message){
 
 
 //juegos API
-async function fetchGames(){
-  try{
-    const response = await fetch('https://cors-anywhere.herokuapp.com/https://www.freetogame.com/api/games?platform=pc')
-    if (!response.ok) throw new Error('API ERROR')
-    return await response.json()
+async function fetchGames() {
+  try {
+    const apiUrl = 'https://www.freetogame.com/api/games?platform=pc';
+    const encodedUrl = encodeURIComponent(apiUrl);
+    const proxyUrl = `https://api.allorigins.win/raw?url=${encodedUrl}`;
+
+    const response = await fetch(proxyUrl);
+    if (!response.ok) throw new Error('Error al obtener datos de la API');
+
+    return await response.json();
   } catch (error) {
-    console.error('ERROR AL TOMAR JUEGOS', error)
-    throw error
+    console.error('ERROR AL TOMAR JUEGOS', error);
+    throw error;
   }
 }
 
