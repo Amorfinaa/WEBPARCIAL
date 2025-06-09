@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (gameId) {
         try {
             showLoader();
-            const gameDetails = await fetchGameDetalle(gameId);
+            const gameDetails = await fetchGameDetae(gameId);
             renderGame(gameDetails);
         } catch (error) {
             console.error('Error al cargar los detalles del juego:', error);
@@ -52,15 +52,16 @@ document.addEventListener('DOMContentLoaded', async () => {
         gameDetailContainer.appendChild(clone);
     }
 
-    async function fetchGameDetalle(gameId) {
-        const apiUrl = `https://www.freetogame.com/api/game?id=${gameId}`;
-        const encodedUrl = encodeURIComponent(apiUrl);
-        const proxyUrl = `https://api.allorigins.win/raw?url=${encodedUrl}`;
+async function fetchGameDetae(gameId) {
+    const apiUrl = `https://www.freetogame.com/api/game?id=${gameId}`;
+    const encodedUrl = encodeURIComponent(apiUrl);
+    const proxyUrl = `https://api.allorigins.win/raw?url=${encodedUrl}`;
 
-        const response = await fetch(proxyUrl);
-        if (!response.ok) throw new Error('ERROR DETALLE JUEGO');
-        return await response.json();
-    }
+    const response = await fetch(proxyUrl);
+    if (!response.ok) throw new Error('ERROR DETALLEJUEGO');
+    return await response.json();
+}
+
 });
 
 function showLoader() {
