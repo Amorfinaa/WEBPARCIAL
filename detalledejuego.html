@@ -7,124 +7,122 @@
     <link rel="stylesheet" href="Estilos/detallestyle.css">
     <link rel="stylesheet" href="Estilos/navbar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
 <body>
-    <!--navbar-->
+    <!-- Navbar -->
     <nav>
-        <img src="assets/logo.png"  class="logo">
-  
-       <div class="containerPrincipal">
+        <img src="assets/logo.png" class="logo">
+
+        <div class="containerPrincipal">
             <div class="filter-group">
-              <label for="title-filter">TITULO:</label>
-              <input type="text" id="title-filter" placeholder="Buscar por título...">
-          </div>
-    
-          <div class="filter-group">
-            <label for="platform-filter">PLATAFORMA:</label>
-            <select id="platform-filter">
-                <option value="">Todas</option>
-                <option value="PC (Windows)">PC (Windows)</option>
-            </select>
-        </div>
-    
-        <div class="filter-group">
-          <label for="genre-filter">GENERO:</label>
-          <select id="genre-filter">
-            <option value="">Todos</option>
-          </select>
-        </div>
-    
-        <div class="filter-group">
-          <label for="date-from">DESDE:</label>
-          <input type="date" id="date-from">
-        </div>
-      
-       <div class="filter-group">
-          <label for="date-to">HASTA:</label>
-          <input type="date" id="date-to">
-       </div>
-    
-        <div class="filter-buttons">
-         <button id="reset-filters" class="reset">RESTABLECER FILTROS</button>
-         <button id="apply-filters">APLICAR FILTROS</button>
-        </div>
-       </div>
-   </nav>
-   
+                <label for="title-filter">TITULO:</label>
+                <input type="text" id="title-filter" placeholder="Buscar por título...">
+            </div>
 
-   <div class="container">
-    <header>
-        
-        <h1>DETALLE DE JUEGO </h1>
-        <a href="index.html" class="back-button">
-            <i class="fas fa-arrow-left"></i> Volver
-        </a>
-    </header>
+            <div class="filter-group">
+                <label for="platform-filter">PLATAFORMA:</label>
+                <select id="platform-filter">
+                    <option value="">Todas</option>
+                    <option value="PC (Windows)">PC (Windows)</option>
+                </select>
+            </div>
 
-    <div id="game-detail"></div>
-    <template id="game-template">
-        <div class="game-header">
-            <img class="game-thumbnail" src="" alt="">
-            <div class="game-info-header">
-                <h2 class="game-title"></h2>
-                <div class="game-tags">
-                    <span class="badge genre"></span>
-                    <span class="badge platform"></span>
-                </div>
+            <div class="filter-group">
+                <label for="genre-filter">GENERO:</label>
+                <select id="genre-filter">
+                    <option value="">Todos</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="date-from">DESDE:</label>
+                <input type="date" id="date-from">
+            </div>
+
+            <div class="filter-group">
+                <label for="date-to">HASTA:</label>
+                <input type="date" id="date-to">
+            </div>
+
+            <div class="filter-buttons">
+                <button id="reset-filters" class="reset">RESTABLECER FILTROS</button>
+                <button id="apply-filters">APLICAR FILTROS</button>
             </div>
         </div>
+    </nav>
 
-        
-      <div class="game-content">
-            <div class="game-main-info">
-                <div class="info-card">
-                    <div class="info-item">
-                        <span class="info-label">DESAROLLADOR: </span>
-                        <span class="developer"></span>
-                    </div>
-                    <div class="info-item">
-                        <span class="info-label">EDITOR: </span>
-                        <span class="publisher"></span>
-                    </div>
-                    <div class="info-item">
-                        <span class="info-label">LANZAMIENTO: </span>
-                        <span class="release-date"></span>
-                    </div>
-                </div>
+    <div class="container">
+        <header>
+            <h1>DETALLE DE JUEGO </h1>
+            <a href="index.html" class="back-button">
+                <i class="fas fa-arrow-left"></i> Volver
+            </a>
+        </header>
 
-                <div class="description"></div>
-                <div class="info-section">
-                    <h3>REQUERIMIENTOS MINIMOS</h3>
-                    <div class="system-requirements">
-                        <div class="requirements"></div>
+        <div id="game-detail"></div>
+
+        <template id="game-template">
+            <div class="game-header">
+                <img class="game-thumbnail" src="" alt="">
+                <div class="game-info-header">
+                    <h2 class="game-title"></h2>
+                    <div class="game-tags">
+                        <span class="badge genre"></span>
+                        <span class="badge platform"></span>
                     </div>
                 </div>
             </div>
 
-            <div class="game-gallery">
-                <h3>GALERIA</h3>
-                <div class="screenshots-container">
+            <div class="game-content">
+                <div class="game-main-info">
+                    <div class="info-card">
+                        <div class="info-item">
+                            <span class="info-label">DESARROLLADOR: </span>
+                            <span class="developer"></span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">EDITOR: </span>
+                            <span class="publisher"></span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">LANZAMIENTO: </span>
+                            <span class="release-date"></span>
+                        </div>
+                    </div>
+
+                    <div class="description"></div>
+
+                    <div class="info-section">
+                        <h3>REQUERIMIENTOS MÍNIMOS</h3>
+                        <div class="system-requirements">
+                            <div class="requirements"></div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="gallery-controls">
-                    <button id="prev-btn" class="gallery-btn">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    <div class="gallery-dots">
+                <div class="game-gallery">
+                    <h3>GALERÍA</h3>
+                    <div class="screenshots-container"></div>
+
+                    <div class="gallery-controls">
+                        <button id="prev-btn" class="gallery-btn">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <div class="gallery-dots"></div>
+                        <button id="next-btn" class="gallery-btn">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
                     </div>
-                    <button id="next-btn" class="gallery-btn">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
                 </div>
             </div>
-        </div>
-</template>
+        </template>
 
-    <div id="modal" class="modal">
-        <span class="close-modal">&times;</span>
-        <img class="modal-content" id="modal-img">
+        <div id="modal" class="modal">
+            <span class="close-modal">&times;</span>
+            <img class="modal-content" id="modal-img">
+        </div>
     </div>
-</div>
-<script src="detalles.js"></script>
-<script type="module" src="detalles.js"></script>
+
+    <script type="module" src="detalles.js"></script>
 </body>
 </html>
