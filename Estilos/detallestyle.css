@@ -1,0 +1,332 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&display=swap');
+
+:root{
+    --primary-color: #FDF500;
+    --secondary-color: #37EBF3;
+    --text-color: #b8b8b8;
+    --background-color: #121212;
+    --card-background: #1a1a2e;
+    --border-color: #fdf5004d;
+    --accent-color: #40ec46;
+    --accent-color-hover: #45a049;
+    --error-color: #ff1504;
+    --error-color-hover: #d32f2f;
+}
+
+
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--background-color);
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+    color: #272932;
+    background-image: radial-gradient(circle at 50% 50%, #1a1a2e 0%, #121212 100%);
+}
+
+.container{
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/*Textos*/
+h1 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    text-shadow: 0 0 15px #fdf500b3;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+    text-shadow: 0 0 8px rgba(253, 245, 0, 0.5);
+    letter-spacing: 0.5px;
+}
+
+h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+    text-shadow: 0 0 8px #fdf50080;
+    letter-spacing: 0.5px;
+}
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
+
+
+
+.back-button{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #fdf5001a;
+    color: var(--primary-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: all 0.3s;
+    border: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.back-button:hover{
+    background-color: #fdf50033;
+    box-shadow: 0 0 15px #fdf50080;
+}
+.back-button::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, #fdf5004d, transparent);
+    transition: left 0.7s;
+}
+.back-button:hover::before{
+    left: 100%;
+}
+
+
+
+
+.game-header{
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+
+
+.game-thumbnail{
+    width: 320px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5), 
+                0 0 0 1px rgba(253, 245, 0, 0.1),
+                0 0 15px rgba(253, 245, 0, 0.3);
+    transition: transform 0.5s;
+    filter: brightness(0.8) contrast(1.2);
+}
+
+.game-thumbnail:hover{
+    transform: scale(1.03);
+    filter: brightness(1) contrast(1.3);
+}
+
+
+
+.game-info-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.game-tags{
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+
+.badge{
+    background-color: #fdf50026;
+    color: var(--primary-color);
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: 1px solid #fdf5004d;
+}
+
+
+
+.game-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+
+
+.info-card{
+    background-color: var(--card-background);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5), 
+                0 0 0 1px rgba(253, 245, 0, 0.1),
+                0 0 15px rgba(253, 245, 0, 0.3);
+    margin-bottom: 20px;
+    border: 1px solid rgba(253, 245, 0, 0.2);
+    position: relative;
+}
+
+.info-card::before{
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+    opacity: 0.7;
+}
+
+.info-item {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: baseline;
+}
+.info-label{
+    font-weight: 600;
+    width: 130px;
+    display: inline-block;
+    color: var(--text-color);
+}
+
+.info-item span:not(.info-label) {
+    color: var(--primary-color);
+}
+
+.description{
+    margin-bottom: 30px;
+    line-height: 1.7;
+    color: var(--text-color);
+}
+.info-section{
+    margin-bottom: 30px;
+}
+
+
+
+.system-requirements {
+    background-color: var(--card-background);
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5), 
+                0 0 0 1px rgba(253, 245, 0, 0.1);
+    border: 1px solid rgba(253, 245, 0, 0.2);
+    color: var(--text-color);
+}
+
+.system-requirements div{
+    /*padding: 1
+    */
+    margin-bottom: 8px;
+}
+.system-requirements strong{
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-right: 5px;
+}
+
+
+
+
+.game-gallery{
+    margin-bottom: 30px;
+}
+
+.screenshots-container{
+    position: relative;
+    max-width: 100%;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    box-shadow: 0 8px 20px #00000080, 
+                0 0 0 1px #fdf5001a,
+                0 0 15px #fdf5004d;
+    border: 1px solid #fdf50033;
+}
+.screenshot{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    /*filter: brightness(0.8) contrast(1.2);*/
+}
+.screenshot.active{
+    opacity: 1;
+}
+.screenshot:hover{
+    filter: brightness(1) contrast(1.3);
+}
+.gallery-controls{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+.gallery-btn{
+    background-color: #fdf5001a;
+    color: var(--primary-color);
+    border: 1px solid #fdf5004d;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s;
+    box-shadow: 0 0 10px #fdf5004d;
+
+}
+.gallery-btn:hover{
+    background-color: #fff70033;
+    box-shadow: 0 0 15px #fdf50080;
+}
+.gallery-dots{
+    display: flex;
+    gap: 8px;
+}
+
+
+.dot{
+    height: 12px;
+    width: 12px;
+    background-color: #272932;
+    border: 1px solid rgba(253, 245, 0, 0.3);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.dot.active{
+    background-color: var(--primary-color);
+    box-shadow: 0 0 8px rgba(253, 245, 0, 0.5);
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>freetogame</title>
+    <link rel="stylesheet" href="/Estilos/style.css">
+    <link rel="stylesheet" href="/Estilos/navbar.css">
+</head>
+<body>
+  <nav>
+      <img src="assets/logo.png"  class="logo">
+
+     <div class="containerPrincipal">
+          <div class="filter-group">
+            <label for="title-filter">TITULO:</label>
+            <input type="text" id="title-filter" placeholder="Buscar por título...">
+        </div>
+  
+        <div class="filter-group">
+          <label for="platform-filter">PLATAFORMA:</label>
+          <select id="platform-filter">
+              <option value="">Todas</option>
+              <option value="PC (Windows)">PC (Windows)</option>
+              <option value="PlayStation 5">Play Station 5</option>
+          </select>
+      </div>
+  
+      <div class="filter-group">
+        <label for="genre-filter">GENERO:</label>
+        <select id="genre-filter">
+          <option value="">Todos</option>
+        </select>
+      </div>
+  
+      <div class="filter-group">
+        <label for="date-from">DESDE:</label>
+        <input type="date" id="date-from">
+      </div>
+    
+     <div class="filter-group">
+        <label for="date-to">HASTA:</label>
+        <input type="date" id="date-to">
+     </div>
+  
+      <div class="filter-buttons">
+       <button id="reset-filters" class="reset">RESTABLECER FILTROS</button>
+       <button id="apply-filters">APLICAR FILTROS</button>
+      </div>
+     </div>
+ </nav> 
+
+ <header>
+  <h1>FREETOGAME</h1>
+ </header>
+
+  <div class="card-container"></div>
+
+
+<script src="arpi.js"> </script>
+</body>
+</html>
